@@ -5,11 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- important assets
-    linear-gradient(#141e30, #2a6c56)
-     box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
-    
-    -->
 
     <style>
         html {
@@ -55,6 +50,8 @@
             margin-bottom: 30px;
             outline: none;
             background: transparent;
+            border: none;
+            border-bottom: 2px solid #03f484;
         }
 
         .login-box .user-box label {
@@ -102,82 +99,33 @@
             display: block;
         }
 
-        .login-box a span:nth-child(1) {
-            top: 0;
-            left: -100%;
+        .login-box a span:nth-child(1),
+        .login-box a span:nth-child(2),
+        .login-box a span:nth-child(3),
+        .login-box a span:nth-child(4) {
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 2px;
             background: linear-gradient(90deg, transparent, #03f484);
-            animation: btn-anim1 1s linear infinite;
+            animation: btn-anim 1s linear infinite;
         }
 
-        @keyframes btn-anim1 {
+        @keyframes btn-anim {
             0% {
-                left: -100%;
+                transform: translate(-50%, -50%) rotate(0deg);
             }
-            50%,
+            25% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(270deg);
+            }
             100% {
-                left: 100%;
-            }
-        }
-
-        .login-box a span:nth-child(2) {
-            top: -100%;
-            right: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(180deg, transparent, #03f484);
-            animation: btn-anim2 1s linear infinite;
-            animation-delay: 0.25s;
-        }
-
-        @keyframes btn-anim2 {
-            0% {
-                top: -100%;
-            }
-            50%,
-            100% {
-                top: 100%;
-            }
-        }
-
-        .login-box a span:nth-child(3) {
-            bottom: 0;
-            right: 100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(270deg, transparent, #03f484);
-            animation: btn-anim3 1s linear infinite;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes btn-anim3 {
-            0% {
-                right: -100%;
-            }
-            50%,
-            100% {
-                right: 100%;
-            }
-        }
-
-        .login-box a span:nth-child(4) {
-            bottom: -100%;
-            left: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(360deg, transparent, #03f484);
-            animation: btn-anim4 1s linear infinite;
-            animation-delay: 0.75s;
-        }
-
-        @keyframes btn-anim4 {
-            0% {
-                bottom: -100%;
-            }
-            50%,
-            100% {
-                bottom: 100%;
+                transform: translate(-50%, -50%) rotate(360deg);
             }
         }
     </style>
@@ -189,11 +137,11 @@
         <form action="">
             <div class="user-box">
                 <input type="text" required>
-                <label for="">Username</label>
+                <label for="">Username:</label>
             </div>
             <div class="user-box">
                 <input type="password" required>
-                <label for="required">password</label>
+                <label for="required">Password:</label>
             </div>
             <a href="">
                 <span></span>
@@ -204,9 +152,6 @@
         </form>
     </div>
 
-     <!-- http://127.0.0.1:5500/qwe.html -->
-     <a href="qwe.html">Home Page</a>
-
-
+    
 </body>
 </html>
