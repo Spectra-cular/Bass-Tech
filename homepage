@@ -1,0 +1,310 @@
+<html>
+    <head>
+        <title> File </title>
+        <style>
+            *{box-sizing:border-box;}
+body{
+  font-family:source sans pro;
+}
+h3{
+  font-weight:400;
+  font-size:16px;
+}
+p{
+  font-size:12px;
+  color:#888;
+}
+
+.stage{
+  max-width:80%;margin:60px 10%;
+  position:relative;  
+}
+.folder-wrap{
+  display: flex;
+  flex-wrap:wrap;
+  
+}
+.folder-wrap::before{
+  content:'Folder name';
+  display: block;
+  position: absolute;
+  top:-40px;
+}
+.folder-wrap:first-child::before{
+  content:'Home (top of file structure)';
+  display: block;
+  position: absolute;
+  top:-40px;
+}
+.tile{
+    border-radius: 3px;
+    width: calc(20% - 17px);
+    margin-bottom: 23px;
+    text-align: center;
+    border: 1px solid #eeeeee;
+    transition: 0.2s all cubic-bezier(0.4, 0.0, 0.2, 1);
+    position: relative;
+    padding: 35px 16px 25px;
+    margin-right: 17px;
+    cursor: pointer;
+}
+.tile:hover{
+  box-shadow: 0px 7px 5px -6px rgba(0, 0, 0, 0.12);
+}
+.tile i{
+    color: #00A8FF;
+    height: 55px;
+    margin-bottom: 20px;
+    font-size: 55px;
+    display: block;
+    line-height: 54px;
+    cursor: pointer;
+}
+.tile i.mdi-file-document{
+  color:#8fd9ff;
+}
+
+.back{
+  font-size: 26px;
+  border-radius: 50px;
+  background: #00a8ff;
+  border: 0;
+  color: white;
+  width: 60px;
+  height: 60px;
+  margin: 20px 20px 0;
+  outline:none;
+  cursor:pointer;
+} 
+.folder-wrap{
+  position: absolute;
+  width: 100%;
+  transition: .365s all cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+}
+.folder-wrap.level-up{
+  transform: scale(1.2);
+    
+}
+.folder-wrap.level-current{
+  transform: scale(1);
+  pointer-events:all;
+  opacity:1;
+  position:relative;
+  height: auto;
+  overflow: visible;
+}
+.folder-wrap.level-down{
+  transform: scale(0.8);  
+}
+h4{
+    color: #07610f;
+}
+
+
+        </style>
+
+    </head>
+    <body>
+        <button class="back">
+            <i class="mdi mdi-arrow-left"></i>
+          </button>
+          
+          
+          <div class="stage">
+            
+            <div class="folder-wrap level-current scrolling">
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h1><a href="INS.html/">INS</a></h1>
+                <h4>Instrumentation</h4>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h1><a href="JAVA.html">JAVA</a></h1>
+                <h4>Java</h4>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h1><a href="PNS.html">PNS</a></h1>
+                <h4>probability and Statics</h4>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h1><a href="SEF.html">SEF</a></h1>
+                <h4>Software and Foundation</h4>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h1><a href="DSA.html">DSA</a></h1>
+                <h4>Data structure Alorogthm</h4>
+              </div><!-- .tile.form -->
+              
+              
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <h4>Something something</h4>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+            </div><!-- .folder-wrap -->
+            <div class="folder-wrap">
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+            </div><!-- .folder-wrap -->
+            <div class="folder-wrap">
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+            </div><!-- .folder-wrap -->
+            <div class="folder-wrap">
+              
+              <div class="tile folder">
+                <i class="mdi mdi-folder"></i>
+                <h3>Folder name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.folder -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+            </div><!-- .folder-wrap -->
+            <div class="folder-wrap">
+              
+              <div class="tile form">
+                <i class="mdi mdi-file-document"></i>
+                <h3>Form name</h3>
+                <p>Something something</p>
+              </div><!-- .tile.form -->
+              
+            </div><!-- .folder-wrap -->
+            
+             
+            
+          </div><!-- .stage -->
+          <script>
+            $( document ).ready(function() {
+  
+  // Folder on click
+  $('.folder').on( "click", function() {
+    
+      console.log( "Drill down" );
+      $('.level-up').removeClass('level-up');
+      $('.level-current').addClass('level-up');
+      $('.level-current').removeClass('level-current');       
+      $('.level-down').addClass('level-current');
+      $('.level-down').removeClass('level-down').next().addClass('level-down');
+    
+  });
+    
+  // Back on Click
+  $('.back').on( "click", function() {
+    if(
+      $('.level-current').is(':first-child')){
+       console.log( "Current is top" );
+    } 
+    else {
+      console.log( "Drill back up" );
+      $('.level-down').removeClass('level-down')
+      $('.level-current').addClass('level-down');
+      $('.level-current').removeClass('level-current');
+      $('.level-up').addClass('level-current');
+      $('.level-up').removeClass('level-up').prev().addClass('level-up');
+    }
+    
+  });
+  
+  
+  
+});
+
+          </script>
+    </body>
+
+</html>
