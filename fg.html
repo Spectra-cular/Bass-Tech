@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown with Links</title>
+</head>
+<body>
+    <label for="cars">Choose a car:</label>
+
+    <!-- The select element creates the dropdown menu -->
+    <select id="cars" name="cars" onchange="redirectToPage()">
+        <!-- Each option element represents a dropdown item -->
+        <option value="">Select a car</option>
+        <option value="volvo"> <a href="https://www.example.com/volvo">Volvo</a></option>
+        <option value="saab"> <a href="https://www.example.com/saab">Saab</a></option>
+        <option value="mercedes"> <a href="https://www.example.com/mercedes">Mercedes</a></option>
+        <option value="audi"> <a href="https://www.example.com/audi">Audi</a></option>
+    </select>
+
+    <script>
+        function redirectToPage() {
+            // Get the selected option value
+            var selectedValue = document.getElementById("cars").value;
+
+            // Redirect to the selected page
+            if (selectedValue) {
+                window.location.href = "https://www.example.com/" + selectedValue;
+            }
+        }
+    </script>
+</body>
+</html>
