@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4df0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #580ecf04;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(205, 212, 199, 0.801);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #034605;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <!-- Use type="button" to prevent the form from submitting automatically -->
+        <input type="button" value="Submit" id="submit-btn" onclick="login2()">
+    </form>
+
+    
+    </script><script>
+        function login2() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            console.log(username);
+            console.log(password);
+
+            if (username === "admin" && password === "admin123") {
+                 window.location.assign("index.html");
+                alert("Log In Successful");
+            } else {
+                alert("Log in unsuccessful");
+            }
+        }
+            
+</body>
+</html>

@@ -27,7 +27,7 @@ echo $user_password;
 echo $user_email;
 
 // $data = 
-// `INSERT INTO 'connection' ('Username', 'Password', 'Email') VALUES ('$username','$password','$email);`
+// INSERT INTO 'connection' ('Username', 'Password', 'Email') VALUES ('$username','$password','$email);
 
 // if ($conn->query($data) === TRUE) {
 //     echo "New record created successfully";

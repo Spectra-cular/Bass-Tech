@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Example</title>
+    <!-- Add any additional styles if needed -->
+    <style>
+        #chat-container {
+            max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            max-height: 300px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        // Your chatbot logic goes here
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            appendMessage('user', userMessage);
+
+            // Replace this with your chatbot logic (e.g., calling an API)
+            // For simplicity, I'm just echoing the user's message in this example
+            var botReply = "I got your message: " + userMessage;
+            appendMessage('bot', botReply);
+
+            // Clear the input field
+            document.getElementById('user-input').value = '';
+        }
+
+        function appendMessage(sender, message) {
+            var chatContainer = document.getElementById('chat-container');
+            var messageElement = document.createElement('div');
+            messageElement.textContent = sender + ': ' + message;
+            chatContainer.appendChild(messageElement);
+
+            // Scroll to the bottom to show the latest messages
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>

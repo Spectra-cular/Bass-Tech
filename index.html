@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Management System</title>
+    <link rel="stylesheet" type="text/css" href="desgin.css">
+</head>
+<h1>Note Management System</h1>&nbsp;&nbsp;&nbsp;&nbsp;&#160;
+<body>
+    <header>
+        <nav>
+    <ul>
+               <h1></h1> <a href="index.html">Home</a> </h1>
+                <h1><a href="about.html">About Us</a> </h1>
+                  <!-- http://127.0.0.1:5500/about.html -->
+    <a href="about.html"></a>
+                <h1><a href="contact.html">Contact Us</a></h1>
+                 <!-- http://127.0.0.1:5500/contact.us -->
+     <a href="contact.html"></a>
+                <h1><a href="login.html">Login</a></h1>
+                 <!-- http://127.0.0.1:5500/login.html -->
+    <a href="login.html"></a>
+                </ul>
+        </nav>
+    </header>
+    <h2>Bachelor in enginnering</h2>
+    <p>Here you can find and upload the note and question related field</p>
+ <button type="button" name="myButton" autofocus>
+      <h2><a href="BE.IT.html">BE.IT</a></h2>
+      <!-- http://127.0.0.1:5500/BE.IT.html -->
+     <a href="BE.IT.html"></a>  
+        <p>Bachlor of Eninnering in <br> Information Technolgy</p>
+
+        <select id="" name="">
+            <!-- Each option element represents a dropdown item -->
+            <option value=""><a href="http://127.0.0.1:5500/1sem.html"> 1 Semester</a></option>
+            <option value=""><a href="">2nd Semester</a>a</option>
+            <option value="">3rd Semester</option>
+            <option value="">4th Semester</option>
+            <option value="">5th Semester</option>
+            <option value="">6th Semester</option>
+            <option value="">7th Semester</option>
+            <option value="">8th Semester</option>
+        </select>
+    </button>
+    <button type="button" name="myButton" autofocus  =>
+        <h2><a href="BE Computer.html">BE.Computer</a></h2>
+        <!-- http://127.0.0.1:5500/BE Computer.html -->
+
+     <a href="BE Computer.html"></a>  
+       </button>    
+    <button type="button" name="myButton" autofocus>
+        <h2><a href="BE Software.html">BE.Software</a></h2> 
+        <!-- http://127.0.0.1:5500/BE Software.html -->
+<a href="BE Software.html">Go to home page</a>
+       <p>Bachlor of Eninnering in <br> Software</p>
+       </button>
+    <button type="button" name="myButton" autofocus>
+        <h2><a href="BE.Civil.html">BE.Civil</a></h2> 
+      <p>Bachlor of Eninnering in <br> Civil </p>
+    
+      </button>
+    
+    <button type="button" name="myButton" autofocus>
+        <h2><a href="BE.Electrical.html">BE.Electrical</a></h2> 
+       <p>Bachlor of Eninnering in <br> Electrical</p>
+    </button>
+    <style>
+    background-image: url('C:\Users\praka\Downloads\images.jpg');
+    /* Set the background size to cover the entire viewport */
+    background-size: cover;
+    background-color: black;
+    color: #333; 
+    </style> 
+    <style>
+        #chat-container {
+            max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            max-height: 300px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        // Your chatbot logic goes here
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            appendMessage('user', userMessage);
+
+            // Replace this with your chatbot logic (e.g., calling an API)
+            // For simplicity, I'm just echoing the user's message in this example
+            var botReply = "I got your message: " + userMessage;
+            appendMessage('bot', botReply);
+
+            // Clear the input field
+            document.getElementById('user-input').value = '';
+        }
+
+        function appendMessage(sender, message) {
+            var chatContainer = document.getElementById('chat-container');
+            var messageElement = document.createElement('div');
+            messageElement.textContent = sender + ': ' + message;
+            chatContainer.appendChild(messageElement);
+
+            // Scroll to the bottom to show the latest messages
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
