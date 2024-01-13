@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat bot</title>
+</head>
+<body>
+
+<div id="chat-container">
+    <!-- Chat messages will be displayed here -->
+</div>
+
+<input type="text" id="user-input" placeholder="Type your message...">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+    const apiKey = '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'; // Replace with your actual API key
+    const chatContainer = document.getElementById('chat-container');
+    const userInput = document.getElementById('user-input');
+
+    function sendMessage() {
+        const userMessage = userInput.value;
+
+        // Display user message
+        displayMessage('user', userMessage);
+
+        // Make a request to the ChatGPT API
+        fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ${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}'
+            },
+            body: JSON.stringify({
+                model: 'gpt-3.5-turbo',
+                messages: [
+                    { role: 'system', content: 'You are a helpful assistant.' },
+                    { role: 'user', content: userMessage }
+                ]
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display ChatGPT's response
+            const chatGptResponse = data.choices[0].message.content;
+            displayMessage('assistant', chatGptResponse);
+        })
+        .catch(error => console.error('Error:', error));
+
+        // Clear user input
+        userInput.value = '';
+    }
+
+    function displayMessage(role, content) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', role);
+        messageDiv.textContent = content;
+        chatContainer.appendChild(messageDiv);
+    }
+</script>
+
+</body>
+</html>
