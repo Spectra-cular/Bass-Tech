@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add a simple fade-out animation */
+        .fadeOut {
+            animation: fadeOut 1s ease-in-out;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+    <script>
+        function logout() {
+            // Add the 'fadeOut' class to initiate the animation
+            document.body.classList.add('fadeOut');
+
+            // Perform any logout-related actions here, such as clearing session data.
+            setTimeout(function () {
+                alert('Logged out successfully!');
+                // Redirect to the login page or any other appropriate page after logout.
+                window.location.href = 'login.html';
+            }, 1000); // Wait for the animation to complete before executing the redirect
+        }
+    </script>
+</head>
+<body>
+
+    <!-- http://127.0.0.1:5500/qwe.html-->
+
+    <button onclick="logout()">Log Out</button>
+
+</body>
+</html>
+

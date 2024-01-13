@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #2a6c56);
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(180, 179, 183, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(245, 46, 53, 0.996);
+            border-radius: 10px;
+        }
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            outline: none;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #03f484;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #ffffff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03f484;
+            font-size: 12px;
+        }
+
+        .login-box form button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03f484;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+        }
+
+        .login-box form button:hover {
+            background: #03f484;
+            color: #f1cccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
+        }
+
+        .login-box form button span {
+            position: absolute;
+            display: block;
+        }
+
+        .login-box form button span:nth-child(1),
+        .login-box form button span:nth-child(2),
+        .login-box form button span:nth-child(3),
+        .login-box form button span:nth-child(4) {
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03f484);
+            animation: btn-anim 1s linear infinite;
+        }
+
+        @keyframes btn-anim {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-50%, -50%) rotate(270deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: rgb(243, 26, 26);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add a simple fade-out animation */
+        .fadeOut {
+            animation: fadeOut 1s ease-in-out;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Note Management System</h1>
+
+    <form id="loginForm">
+        <div class="login-box">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <!-- Use type="button" to prevent the form from submitting automatically -->
+            <input type="button" value="Submit" id="submit-btn" onclick="login()">
+        </div>
+    </form>
+
+    <button onclick="logout()">Log Out</button>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            console.log(username);
+            console.log(password);
+
+            if (username === "admin" && password === "admin123") {
+                window.location.assign("qwe.html");
+                alert("Log In Successful");
+            } else {
+                alert("Username and password did not match");
+            }
+        }
+
+        function logout() {
+            document.body.classList.add('fadeOut');
+            setTimeout(function () {
+                alert('Logged out successfully!');
+                window.location.href = 'login.html';
+            }, 1000);
+        }
+    </script>
+</body>
+<style>
+    h1{
+        text-align: center;
+        text-shadow: black;
+        font-weight: bold;
+        font-size: 75px;
+
+
+    }
+    input{
+        font-size: 10px;
+        color: rgb(231, 181, 181);
+        border-radius: 5px;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 5px;
+        
+    }
+    input:focus{
+        border-color: #4CAF50;
+    }
+</style>
+
+</html>

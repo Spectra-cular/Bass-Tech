@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Management System</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #2a6c56);
+            color: #fff;
+        }
+
+        h1 {
+            margin: 20px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: left;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        nav ul h2 {
+            display: inline-block;
+            margin: 0;
+            padding: 15px 20px;
+            font-size: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #03f484;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #02824f;
+        }
+
+        #chat-container {
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            overflow-y: scroll;
+            max-height: 300px;
+        }
+
+        #user-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            display: inline-block;
+            vertical-align: top;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        #send-button {
+            width: 20px;
+            padding: 10px;
+            background-color: #03f484;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 2px;
+            vertical-align: top;
+            transition: background-color 0.3s;
+        }
+
+        #send-button:hover {
+            background-color: #02824f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Note Management System</h1>
+
+    <div>
+        <header>
+            <nav>
+                <ul>
+                    <h2><a href="#">Home</a></h2>
+                    <h2><a href="about.html">About Us</a></h2>
+                    <h2><a href="contact.html">Contact Us</a></h2>
+                    <h2><a href="logout.html">logout</a></h2>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <h2>Bachelor in Engineering</h2>
+        
+
+        <div class="button-container">
+            <button type="button" name="myButton">
+                <h2><a href="BE.html">BEIT</a></h2>
+                <p>Bachelor of Engineering in Information Technology</p>
+            </button>
+
+            <button type="button" name="myButton">
+                <h2><a href="BE.html">BE Computer</a></h2>
+                <p>Bachelor of Engineering in Computer</p>
+            </button>
+
+            <button type="button" name="myButton">
+                <h2><a href="BE.html">BE Software</a></h2>
+                <p>Bachelor of Engineering in Software</p>
+            </button>
+
+            <button type="button" name="myButton">
+                <h2><a href="BEcivil.html">BE Civil</a></h2>
+                <p>Bachelor of Engineering in Civil</p>
+            </button>
+
+            <button type="button" name="myButton">
+                <h2><a href="BEElectrical.html">BE Electrical</a></h2>
+                <p>Bachelor of Engineering in Electrical</p>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Chat Container -->
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-button" onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            appendMessage('user', userMessage);
+
+            // Replace this with your chatbot logic (e.g., calling an API)
+            // For simplicity, I'm just echoing the user's message in this example
+            var botReply = "I got your message: " + userMessage;
+            appendMessage('bot', botReply);
+
+            document.getElementById('user-input').value = '';
+        }
+
+        function appendMessage(sender, message) {
+            var chatContainer = document.getElementById('chat-container');
+            var messageElement = document.createElement('div');
+            messageElement.textContent = sender + ': ' + message;
+            chatContainer.appendChild(messageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+    <style>
+        #contact-section {
+        text-align: center;
+        margin: 30px;   
+        }
+
+        #contact-section h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        }
+
+        #contact-icons {
+        font-size: 30px;
+        margin-top: 10px;
+        }
+
+        #contact-icons a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        }
+    </style>
+<br>
+<br>
+<h2><a href="contact.html">Contact Us</a></h2>
+<div class="topic">Address</div>
+          <div class="text-one">Kathmandu,NP 12</div>
+          <div class="text-two">Bagmati</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+977 9867218297</div>
+          <div class="text-two">+977 9815849298</div>
+        </div>
+</body>
+</html>
