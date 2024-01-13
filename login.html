@@ -143,24 +143,10 @@
                 <input type="password" id="password" name="password" required>
                 <label for="password">Password</label>
             </div>
-            <button type="submit">Log In</button>
-        </form>
-        <script>
-            function login2() {
-                var username = document.getElementById('username').value;
-                var password = document.getElementById('password').value;
-    
-                console.log(username);
-                console.log(password);
-    
-                if (username === "admin" && password === "admin123") {
-                    window.location.assign("qwe.html");
-                    alert("Log In Successful");
-                } else {
-                    alert("Log in unsuccessful");
-                }
-            }
-        </script>
+            <a herf="qwe.html" target="_blank">
+                <button type="submit">Log In</button>
+                    </a>
+            </form>
     </div>
 
 </body>
